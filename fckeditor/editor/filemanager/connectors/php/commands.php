@@ -66,7 +66,7 @@ function GetDwfckNs()
 
        $_FolderClass = $AUTH;    
        if(!$isFolder) return($AUTH > 0);       
-       return ($AUTH >1);
+       return ($AUTH);
  }
 
   
