@@ -39,8 +39,8 @@ require_once DOKU_INC.'inc/utf8.php';
  * @return int             permission level
  */
 function auth_aclcheck($id,$user,$groups, $_auth=1){
- checkacl_write_debug("$id,$user");
-    global $AUTH_ACL;
+  //checkacl_write_debug("$id,$user");
+  global $AUTH_ACL;
   $AUTH_ACL = auth_loadACL($AUTH_ACL);
   if($_auth == 255) {
         return 255; 
@@ -76,7 +76,7 @@ function auth_aclcheck($id,$user,$groups, $_auth=1){
     } else {
         $groups[] = '@ALL';
     }
-   checkacl_write_debug($user . "," . print_r($groups,true));
+
     //check exact match first
     $matches = preg_grep('/^'.preg_quote($id, '/').'[ \t]+([^ \t]+)[ \t]+/', $AUTH_ACL);
     if(count($matches)) {
@@ -145,7 +145,6 @@ function auth_aclcheck($id,$user,$groups, $_auth=1){
     } while(1); //this should never loop endless
     return AUTH_NONE;
 }
-
 
 function auth_isCaseSensitive() {
   global $Dwfck_conf_values;
@@ -301,7 +300,7 @@ function auth_loadACL($acl_file){
 
 function checkacl_write_debug($data) {
     
-//return;
+  return;
   if (!$handle = fopen('acl.txt', 'a')) {
     return;
     }
