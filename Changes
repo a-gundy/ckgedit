@@ -1,4 +1,4 @@
-rev 15-Jun_12-19_55
+rev 15-Jun_14-15_49
 
 28 Feb 2013
 Added support for interwiki links
@@ -696,3 +696,6 @@ More updates to check_acl, add static modifiers to SafeFN.class
 
 Jun 12
 Refactored auth_aclcheck to conform to latest DW version in auth.php
+
+14 Jun
+Fixed buggy auth_aclcheck
